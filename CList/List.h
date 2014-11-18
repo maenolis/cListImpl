@@ -1,32 +1,32 @@
-#ifndef _MYLIST_H_
-#define _MYLIST_H_
+#ifndef _List_H_
+#define _List_H_
 
 typedef struct node* nodePtr;
 
-typedef struct myList* myListPtr;
+typedef struct List* ListPtr;
 
-int createMyList(myListPtr* list);
+int createList(ListPtr* list);
 
-int getSizeMyList(myListPtr list);
+int getSizeList(ListPtr list);
 
-int pushFrontMyList(myListPtr list, void* _data);
+int pushFrontList(ListPtr list, void* _data);
 
-int pushBackMyList(myListPtr list, void* _data);
+int pushBackList(ListPtr list, void* _data);
 
-int popFrontMyList(myListPtr list);
+int popFrontList(ListPtr list);
 
-int popAndGetFrontMyList(myListPtr list, void** _data);
+int popAndGetFrontList(ListPtr list, void** _data);
 
-int popBackMyList(myListPtr list);
+int popBackList(ListPtr list);
 
-int popAndGetBackMyList(myListPtr list, void** _data);
+int popAndGetBackList(ListPtr list, void** _data);
 
-int getFirstMyList(myListPtr list, void** _data);
+int getFirstList(ListPtr list, void** _data);
 
-int getLastMyList(myListPtr list, void** _data);
+int getLastList(ListPtr list, void** _data);
 
-int destroyMyList(myListPtr* list);
+int destroyList(ListPtr* list);
 
-int invertMyList(myListPtr list);
+int invertList(ListPtr list);
 
 #endif

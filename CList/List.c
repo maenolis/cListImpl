@@ -13,20 +13,20 @@ typedef struct node {
 	void* data;
 } node;
 
-typedef struct myList {
+typedef struct List {
 	/*list size variable*/
 	int size;
 	/*first node*/
 	nodePtr first;
 	/*last node*/
 	nodePtr last;
-} myList;
+} List;
 
-int createMyList(myListPtr* list) {
+int createList(ListPtr* list) {
 	/*memory allocation for the new list*/
-	*list = malloc(sizeof(myList));
+	*list = malloc(sizeof(List));
 	if (*list == NULL) {
-		perror("Malloc for createMyList");
+		perror("Malloc for createList");
 		return -1;
 	}
 	/*variables initialization*/
@@ -36,7 +36,7 @@ int createMyList(myListPtr* list) {
 	return 1;
 }
 
-int getSizeMyList(myListPtr list) {
+int getSizeList(ListPtr list) {
 	if (list == NULL) {
 		printf("This list is not even created...\n");
 		return -1;
@@ -44,7 +44,7 @@ int getSizeMyList(myListPtr list) {
 	return list->size;
 }
 
-int pushFrontMyList(myListPtr list, void* _data) {
+int pushFrontList(ListPtr list, void* _data) {
 	if (list == NULL) {
 		printf("This list is not even created...\n");
 		return -1;
@@ -73,7 +73,7 @@ int pushFrontMyList(myListPtr list, void* _data) {
 	return 1;
 }
 
-int pushBackMyList(myListPtr list, void* _data) {
+int pushBackList(ListPtr list, void* _data) {
 	if (list == NULL) {
 		printf("This list is not even created...\n");
 		return -1;
@@ -102,7 +102,7 @@ int pushBackMyList(myListPtr list, void* _data) {
 	return 1;
 }
 
-int popFrontMyList(myListPtr list) {
+int popFrontList(ListPtr list) {
 	if (list == NULL) {
 		printf("This list is not even created...\n");
 		return -1;
@@ -126,19 +126,19 @@ int popFrontMyList(myListPtr list) {
 	return 1;
 }
 
-int popAndGetFrontMyList(myListPtr list, void** _data) {
+int popAndGetFrontList(ListPtr list, void** _data) {
 	/*get data from first node*/
-	if (getFirstMyList(list, _data) < 0) {
+	if (getFirstList(list, _data) < 0) {
 		return -1;
 	}
 	/*then pop the first node*/
-	if (popFrontMyList(list) < 0) {
+	if (popFrontList(list) < 0) {
 		return -1;
 	}
 	return 1;
 }
 
-int popBackMyList(myListPtr list) {
+int popBackList(ListPtr list) {
 	if (list == NULL) {
 		printf("This list is not even created...\n");
 		return -1;
@@ -162,19 +162,19 @@ int popBackMyList(myListPtr list) {
 	return 1;
 }
 
-int popAndGetBackMyList(myListPtr list, void** _data) {
+int popAndGetBackList(ListPtr list, void** _data) {
 	/*get data from last node*/
-	if (getLastMyList(list, _data) < 0) {
+	if (getLastList(list, _data) < 0) {
 		return -1;
 	}
 	/*then pop the last node*/
-	if (popBackMyList(list) < 0) {
+	if (popBackList(list) < 0) {
 		return -1;
 	}
 	return 1;
 }
 
-int getFirstMyList(myListPtr list, void** _data) {
+int getFirstList(ListPtr list, void** _data) {
 	if (list == NULL) {
 		printf("This list is not even created...\n");
 		return -1;
@@ -188,7 +188,7 @@ int getFirstMyList(myListPtr list, void** _data) {
 	return 1;
 }
 
-int getLastMyList(myListPtr list, void** _data) {
+int getLastList(ListPtr list, void** _data) {
 	if (list == NULL) {
 		printf("This list is not even created...\n");
 		return -1;
@@ -202,7 +202,7 @@ int getLastMyList(myListPtr list, void** _data) {
 	return 1;
 }
 
-int destroyMyList(myListPtr* list) {
+int destroyList(ListPtr* list) {
 	if (*list == NULL) {
 		printf("This list is not even created...\n");
 		return -1;
@@ -218,7 +218,7 @@ int destroyMyList(myListPtr* list) {
 	return 1;
 }
 
-int invertMyList(myListPtr list) {
+int invertList(ListPtr list) {
 	if (list == NULL) {
 		printf("This list is not even created...\n");
 		return -1;
